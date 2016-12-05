@@ -93,20 +93,25 @@ public class Main extends AppCompatActivity implements SensorEventListener {
         float z = values[2];
 
         float accelationSquareRoot = (x * x + y * y + z * z) / (SensorManager.GRAVITY_EARTH * SensorManager.GRAVITY_EARTH);
+
         long actualTime = event.timestamp;
+
         if (accelationSquareRoot >= 2) //
         {
             if (actualTime - lastUpdate < 200) {
                 return;
             }
+
             lastUpdate = actualTime;
             Toast.makeText(this, "Device detected a shock !!", Toast.LENGTH_SHORT).show();
+
             if (color) {
                 view.setBackgroundColor(Color.GREEN);
             } else {
                 view.setBackgroundColor(Color.RED);
             }
             color = !color;
+
         }
     }
 
