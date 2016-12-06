@@ -84,7 +84,7 @@ public class Main extends AppCompatActivity implements SensorEventListener {
 
     }
 
-    private void getAccelerometer(SensorEvent event){
+    private void getAccelerometer(SensorEvent event) {
 
         float[] values = event.values;
         // Movement
