@@ -22,15 +22,15 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     private static final String KEY_PARAM_TIME = "time";
 
 
-    public DataBaseHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
+    public DataBaseHandler(Context context) {
+        super(context, DATA_BASE_NAME, null, DATA_BASE_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
         String CREAT_TABLE_PARAM = "CREATE TABLE" + TABLE_PARAMS + "(" + KEY_ID + "INTEGER PRIMARY KEY," + KEY_PARAM_X +
-                " FLOAT," + KEY_PARAM_Y + " FLOAT," + KEY_PARAM_Z + " FLOAT," + KEY_PARAM_TIME + "TIMESTAMP" + " )";
+                " FLOAT," + KEY_PARAM_Y + " FLOAT," + KEY_PARAM_Z + " FLOAT," + KEY_PARAM_TIME + "LONG" + " )";
         sqLiteDatabase.execSQL(CREAT_TABLE_PARAM);
     }
 
@@ -56,16 +56,16 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         db.close();
     }
 
-    public Params getParams(int id){
+    public Params getParams(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Params params=null;
-        Cursor cursor = db.query(TABLE_PARAMS,new String[]{KEY_ID,KEY_PARAM_X,KEY_PARAM_Y,KEY_PARAM_Z,KEY_PARAM_TIME},
-                KEY_ID+"=?", new String[]{String.valueOf(id)},null,null,null,null);
-        if (cursor!=null){
+        Params params = null;
+        Cursor cursor = db.query(TABLE_PARAMS, new String[]{KEY_ID, KEY_PARAM_X, KEY_PARAM_Y, KEY_PARAM_Z, KEY_PARAM_TIME},
+                KEY_ID + "=?", new String[]{String.valueOf(id)}, null, null, null, null);
+        if (cursor != null) {
             cursor.moveToFirst();
 
             params = new Params(Float.parseFloat(cursor.getString(1)),
-                    Float.parseFloat(cursor.getString(2)),Float.parseFloat(cursor.getString(3)),
+                    Float.parseFloat(cursor.getString(2)), Float.parseFloat(cursor.getString(3)),
                     Long.parseLong(cursor.getString(4)));
         }
         return params;
