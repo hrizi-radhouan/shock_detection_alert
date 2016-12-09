@@ -119,7 +119,7 @@ public class Main extends AppCompatActivity implements SensorEventListener {
              * send a message to care the user that the device detected a shock
              * **/
             SmsManager.getDefault().sendTextMessage("23481849",null,"your device detected a shock",null,null);
-            Log.d("Insert","Insert is finish .");
+            Log.d("Send"," the message was sent by success!!");
 
 
             if (color) {
