@@ -1,6 +1,7 @@
 package tn.enis.com.shock_detection_alert;
 
 import android.graphics.Color;
+import android.graphics.drawable.RippleDrawable;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;

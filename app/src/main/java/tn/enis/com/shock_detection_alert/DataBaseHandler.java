@@ -29,8 +29,8 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
-        String CREAT_TABLE_PARAM = "CREATE TABLE" + TABLE_PARAMS + "(" + KEY_ID + "INTEGER PRIMARY KEY," + KEY_PARAM_X +
-                " FLOAT," + KEY_PARAM_Y + " FLOAT," + KEY_PARAM_Z + " FLOAT," + KEY_PARAM_TIME + "LONG" + " )";
+        String CREAT_TABLE_PARAM = "CREATE TABLE " + TABLE_PARAMS + " ( " + KEY_ID + " INTEGER PRIMARY KEY," + KEY_PARAM_X +
+                " FLOAT," + KEY_PARAM_Y + " FLOAT," + KEY_PARAM_Z + " FLOAT," + KEY_PARAM_TIME + " LONG " + " )";
         sqLiteDatabase.execSQL(CREAT_TABLE_PARAM);
     }
 
