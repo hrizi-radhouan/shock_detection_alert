@@ -11,6 +11,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.telephony.gsm.SmsManager;
 import android.util.Log;
 import android.view.View;
 import android.view.Menu;
@@ -112,6 +113,14 @@ public class Main extends AppCompatActivity implements SensorEventListener {
 
             lastUpdate = actualTime;
             Toast.makeText(this, "Device detected a shock !!", Toast.LENGTH_SHORT).show();
+
+
+            /**
+             * send a message to care the user that the device detected a shock
+             * **/
+            SmsManager.getDefault().sendTextMessage("23481849",null,"your device detected a shock",null,null);
+            Log.d("Insert","Insert is finish .");
+
 
             if (color) {
                 view.setBackgroundColor(Color.GREEN);
