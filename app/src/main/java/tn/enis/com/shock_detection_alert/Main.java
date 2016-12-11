@@ -118,7 +118,7 @@ public class Main extends AppCompatActivity implements SensorEventListener {
             /**
              * send a message to care the user that the device detected a shock
              * **/
-            SmsManager.getDefault().sendTextMessage("23481849",null,"your device detected a shock",null,null);
+            //SmsManager.getDefault().sendTextMessage("23481849",null,"your device detected a shock",null,null);
             Log.d("Send"," the message was sent by success!!");
 
 
@@ -147,6 +147,14 @@ public class Main extends AppCompatActivity implements SensorEventListener {
         // unregister listener
         super.onPause();
         sensorManager.unregisterListener(this);
+    }
+
+    public void startService(View view){
+
+    }
+
+    public void stopService(View view){
+
     }
 
 }

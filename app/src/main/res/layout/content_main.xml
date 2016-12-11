@@ -12,10 +12,21 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="tn.enis.com.shock_detection_alert.Main"
     tools:showIn="@layout/activity_main">
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Shake to get a toast and to switch color" />
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:text="start service"
+        android:gravity="center"
+        android:onClick="startService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="stop service"
+        android:gravity="center"
+        android:onClick="stopService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>
 </RelativeLayout>
